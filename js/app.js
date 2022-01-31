@@ -11,6 +11,23 @@ addEventListeners();
 
 function addEventListeners()
 {
+    form.addEventListener('submit',addTodo);
+}
+
+function addTodo(e)
+{   
+    const newTodo = todoInput.value.trim();
+
+    if(newTodo === "")
+    {
+        alert('Boş deger girdiniz.');
+    }
+    else 
+    {
+        UI.addTodoToUI(newTodo);
+    }
+
+    e.preventDefault();
 }
 
 
