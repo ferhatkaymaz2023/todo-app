@@ -25,8 +25,10 @@ function addTodo(e)
     else 
     {
         UI.addTodoToUI(newTodo);
+   
     }
 
+    UI.clearInputs(todoInput);
     e.preventDefault();
 }
 

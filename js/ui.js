@@ -2,6 +2,11 @@
     class UI
     {
 
+        static clearInputs(todoElement)
+        {
+            todoElement.value = '';
+        }
+
 
         static addTodoToUI(newTodo)
         {
