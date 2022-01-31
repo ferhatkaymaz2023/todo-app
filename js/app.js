@@ -12,6 +12,7 @@ addEventListeners();
 function addEventListeners()
 {
     form.addEventListener('submit',addTodo);
+    document.addEventListener('DOMContentLoaded',loadAllTodos);
 
 }
 
@@ -28,11 +29,17 @@ function addTodo(e)
         UI.addTodoToUI(newTodo);
         Storage.addTodoToStorage(newTodo);
         UI.showAlert('success','Todo input is sended');
-   
     }
 
     UI.clearInputs(todoInput);
     e.preventDefault();
+}
+
+function loadAllTodos()
+{
+    let todos = Storage.getTodosFromStorage();
+    todos.forEach(todo => UI.addTodoToUI(todo));
+
 }
 
 
