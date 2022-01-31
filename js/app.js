@@ -1,7 +1,7 @@
 const form = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo');
 const filterInput = document.getElementById('filter');
-const todoList = document.getElementById('list-group');
+const todoList = document.querySelector(".list-group");
 const clearButton = document.getElementById('clear-todos');
 const firstCardBody = document.querySelectorAll('.card-body')[0];
 const secondCardBody = document.querySelectorAll('.card-body')[1];
@@ -15,6 +15,7 @@ function addEventListeners()
     document.addEventListener('DOMContentLoaded',loadAllTodos);
     secondCardBody.addEventListener('click',deleteTodo);
     filterInput.addEventListener('keyup',filterTodo);
+    clearButton.addEventListener('click',clearAllTodos);
 
 }
 
@@ -61,5 +62,15 @@ function filterTodo(e)
             : item.setAttribute('style','display:block');
     });
 
+
+}
+
+
+function clearAllTodos()
+{
+    while(todoList.firstElementChild)
+    {
+        todoList.firstElementChild.remove();
+    }
 
 }

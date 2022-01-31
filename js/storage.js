@@ -8,7 +8,6 @@
             return localStorage.getItem('todos') === null ? todos = [] : todos = JSON.parse(localStorage.getItem('todos'));
         }
 
-
         static addTodoToStorage(newTodo)
         {
             let todos = this.getTodosFromStorage();
@@ -24,4 +23,5 @@
 
             localStorage.setItem('todos',JSON.stringify(todos));
         }
+  
     }

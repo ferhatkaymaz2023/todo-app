@@ -46,5 +46,4 @@
             element.parentElement.parentElement.remove();
         }
 
-
     }
