@@ -20,11 +20,12 @@ function addTodo(e)
 
     if(newTodo === "")
     {
-        alert('Boş deger girdiniz.');
+        UI.showAlert('warning','Please e todo ');
     }
     else 
     {
         UI.addTodoToUI(newTodo);
+        UI.showAlert('success','Todo input is sended');
    
     }
 

@@ -2,6 +2,19 @@
     class UI
     {
 
+        static showAlert(type,message)
+        {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+
+            document.querySelector('.card-body').appendChild(alert);
+
+            setTimeout(() => {  alert.remove()  },1500);
+
+        }
+
+
         static clearInputs(todoElement)
         {
             todoElement.value = '';
