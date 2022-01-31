@@ -12,6 +12,7 @@ addEventListeners();
 function addEventListeners()
 {
     form.addEventListener('submit',addTodo);
+
 }
 
 function addTodo(e)
@@ -25,6 +26,7 @@ function addTodo(e)
     else 
     {
         UI.addTodoToUI(newTodo);
+        Storage.addTodoToStorage(newTodo);
         UI.showAlert('success','Todo input is sended');
    
     }
