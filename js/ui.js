@@ -40,4 +40,11 @@
 
         }
 
+
+        static deleteTodoFromUI(element)
+        {
+            element.parentElement.parentElement.remove();
+        }
+
+
     }

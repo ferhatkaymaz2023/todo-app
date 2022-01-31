@@ -13,6 +13,7 @@ function addEventListeners()
 {
     form.addEventListener('submit',addTodo);
     document.addEventListener('DOMContentLoaded',loadAllTodos);
+    secondCardBody.addEventListener('click',deleteTodo);
 
 }
 
@@ -42,4 +43,8 @@ function loadAllTodos()
 
 }
 
+function deleteTodo(e)
+{
+    e.target.className === 'fa fa-remove' && UI.deleteTodoFromUI(e.target) || Storage.deleteTodoFromStorage(e.target.parentElement.parentElement.textContent);
+}
 
